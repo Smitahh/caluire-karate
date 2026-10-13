@@ -727,6 +727,16 @@ html.light .hero::before{opacity:.6}
 .btn.btn-belt .bk b,.site-foot .foot-id .btn.btn-belt .bk b{font:inherit;color:inherit;letter-spacing:0}
 @media (prefers-reduced-motion:reduce){.btn.btn-belt::before,.btn.btn-belt .bk b{transition:none!important}}
 @media (hover:none){.btn.btn-belt::before,.btn.btn-belt .bk{display:none}}
+.trial{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;background:var(--ai-2);border-radius:var(--r);padding:28px 32px}
+.trial-txt{display:grid;gap:8px;min-width:0;flex:1 1 380px}
+.trial h2{margin:0}
+.who+.trial{background:var(--ai);margin-top:16px}
+.trial p{margin:0;color:var(--kinu-2);max-width:60ch}
+.trial .row{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:560px){.trial{padding:22px}.trial .row .btn{flex:1 1 auto}}
+.trial-note{margin:0;padding:16px 20px;border-radius:var(--r);background:var(--ai-2);color:var(--kinu-2);max-width:none}
+.trial-note b{color:var(--kinu)}
+.trial-note a{color:var(--kinu);text-underline-offset:3px}
 .legal{display:grid;gap:clamp(32px,4vw,44px);max-width:760px}
 .legal .sec{gap:10px}
 .legal h2{font-size:clamp(20px,2.4vw,24px)}
@@ -805,6 +815,10 @@ html.light .hero::before{opacity:.6}
   <div class="sec band">
     <h2>Trouvez votre cours</h2>
     <div class="who" id="who"></div>
+    <div class="trial">
+      <div class="trial-txt"><h2>Le premier cours est <em>gratuit</em></h2><p>Venez essayer avant de vous inscrire, en simple tenue de sport. Écrivez-nous pour trouver le cours qui vous correspond.</p></div>
+      <div class="row"><a class="btn btn-line" href="https://api.whatsapp.com/send?phone=33651098584&amp;text=Bonjour%2C%20je%20souhaiterais%20faire%20un%20cours%20d%27essai%20de%20karat%C3%A9.%20Pouvez-vous%20m%27indiquer%20le%20cr%C3%A9neau%20adapt%C3%A9%20%3F%20%28%C3%A2ge%20/%20niveau%20%3A%20%29" target="_blank" rel="noopener">Écrire sur WhatsApp</a><a class="btn btn-line" href="mailto:president@caluirekarate.fr?subject=Cours%20d%27essai">Envoyer un mail</a></div>
+    </div>
   </div>
 
   <div class="aids">
@@ -890,6 +904,7 @@ html.light .hero::before{opacity:.6}
 <!-- INSCRIPTION -->
 <section class="view" id="v-inscription" hidden>
   <div class="head"><h1>Votre <em>inscription</em></h1><p>Toutes les démarches se font en ligne, depuis un ordinateur, une tablette ou un smartphone. Un bénévole peut aussi vous inscrire sur place, au dojo.</p></div>
+  <p class="trial-note"><b>Pas encore décidé ?</b> Le premier cours est gratuit, en simple tenue de sport. Réservez-le sur <a href="https://api.whatsapp.com/send?phone=33651098584&amp;text=Bonjour%2C%20je%20souhaiterais%20faire%20un%20cours%20d%27essai%20de%20karat%C3%A9.%20Pouvez-vous%20m%27indiquer%20le%20cr%C3%A9neau%20adapt%C3%A9%20%3F%20%28%C3%A2ge%20/%20niveau%20%3A%20%29" target="_blank" rel="noopener">WhatsApp</a> ou par <a href="mailto:president@caluirekarate.fr?subject=Cours%20d%27essai">mail</a>.</p>
   <div class="sec">
     <h2>En quatre étapes</h2>
     <ol class="steps">
