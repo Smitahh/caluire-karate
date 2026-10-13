@@ -1066,17 +1066,17 @@ const EV=[
 const DAYS=[["lun","Lundi"],["mer","Mercredi"],["jeu","Jeudi"],["sam","Samedi"]];
 const DAYN={lun:"Lun.",mer:"Mer.",jeu:"Jeu.",sam:"Sam."};
 const ACTS=[
- {k:"baby",t:"Baby arts martiaux",age:"4 et 5 ans",p:"219 €",ps:"la saison",pitch:"Éveil, motricité et premiers gestes, en jouant.",photos:["baby.webp","baby2.webp","sourire.webp"],
+ {k:"baby",t:"Baby arts martiaux",age:"4 et 5 ans",p:"219 €",ps:"la saison",pitch:"Éveil, motricité et premiers gestes, en jouant.",photos:["baby.webp|50% 30%","baby2.webp|40% 45%","sourire.webp|30% 25%"],
   groups:[{ev:e=>e[3]==="baby",lbl:e=>`Dojo ${e[6]}`}]},
- {k:"enfant",t:"Karaté enfant",age:"Groupes débutant et confirmé",p:"279 €",ps:"la saison",pitch:"Technique, kata et respect, avec préparation aux grades.",photos:["enfant.webp","parents-enfants.webp","competition.webp"],
+ {k:"enfant",t:"Karaté enfant",age:"Groupes débutant et confirmé",p:"279 €",ps:"la saison",pitch:"Technique, kata et respect, avec préparation aux grades.",photos:["enfant.webp|50% 55%","parents-enfants.webp|25% 40%","competition.webp|40% 30%"],
   groups:[{ev:e=>e[3]==="enfant",lbl:e=>`${e[5]} · ${e[6]}`},
           {h:"Également inclus",ev:e=>e[3]==="compet",lbl:e=>`Compétition et préparation aux grades · ${e[6]}`}],
   extra:"Accès au karaté contact et au circuit training compris."},
- {k:"ado",t:"Karaté ado/adulte",age:"Groupes débutant et confirmé",p:"279 €",ps:"la saison",pitch:"Du premier cours à la ceinture noire, à votre rythme.",photos:["ado.webp","kata.webp","ceinture-noire.webp","kata2.webp","hauts-grades.webp","stage.webp"],
+ {k:"ado",t:"Karaté ado/adulte",age:"Groupes débutant et confirmé",p:"279 €",ps:"la saison",pitch:"Du premier cours à la ceinture noire, à votre rythme.",photos:["ado.webp|55% 25%","kata.webp|50% 45%","ceinture-noire.webp|5% 30%","kata2.webp|40% 35%","hauts-grades.webp|62% 30%","stage.webp|50% 50%"],
   groups:[{ev:e=>e[3]==="ado",lbl:e=>`${e[5]} · ${e[6]}`},
           {h:"Également inclus",ev:e=>e[3]==="hg"||e[3]==="compet",lbl:e=>e[3]==="hg"?`Préparation aux grades · ${e[6]}`:`Compétition et préparation aux grades · ${e[6]}`}],
   extra:"Accès au karaté contact et au circuit training compris."},
- {k:"forme",t:"Karaté contact & circuit training",age:"Combat encadré et remise en forme, tout niveau",p:"189 €",ps:"249 € en duo",pitch:"Une seule adhésion pour les deux cours.",photos:["contact.webp","circuit.webp","full-contact.webp","competition2.webp"],
+ {k:"forme",t:"Karaté contact & circuit training",age:"Combat encadré et remise en forme, tout niveau",p:"189 €",ps:"249 € en duo",pitch:"Une seule adhésion pour les deux cours.",photos:["contact.webp|50% 50%","circuit.webp|50% 45%","full-contact.webp|100% 50%","competition2.webp|45% 40%"],
   groups:[{h:"Light & full contact",ev:e=>e[4]==="Light & full contact",lbl:e=>`Karaté contact, cardio · ${e[6]}`},
           {h:"Circuit training",ev:e=>e[4]==="Circuit training",lbl:e=>`Remise en forme, libre accès · ${e[6]}`}]}
 ];
@@ -1090,7 +1090,7 @@ const slotsFor=a=>EV.filter(e=>e[3]===a.k&&(!a.only||e[4]===a.only));
 // Activités
 const actHTML=a=>`
  <article class="act" id="act-${a.k}" style="--c:${CATS[a.k].c}">
-  <figure class="ph photo car" data-n="${a.photos.length}"><div class="car-track">${a.photos.map((f,i)=>`<img src="img/${f}" alt="${a.t}, photo ${i+1} sur ${a.photos.length}" loading="lazy" draggable="false">`).join("")}</div>
+  <figure class="ph photo car" data-n="${a.photos.length}"><div class="car-track">${a.photos.map((f,i)=>{const[src,pos]=f.split("|");return`<img src="img/${src}" style="object-position:${pos||"50% 50%"}" alt="${a.t}, photo ${i+1} sur ${a.photos.length}" loading="lazy" draggable="false">`}).join("")}</div>
    <button class="car-btn prev" type="button" aria-label="Photo précédente">‹</button><button class="car-btn next" type="button" aria-label="Photo suivante">›</button>
    <div class="car-dots">${a.photos.map((_,i)=>`<span${i?"":' class="on"'}></span>`).join("")}</div></figure>
   <div class="body">
