@@ -737,6 +737,10 @@ html.light .hero::before{opacity:.6}
 .trial-note{margin:0;padding:16px 20px;border-radius:var(--r);background:var(--ai-2);color:var(--kinu-2);max-width:none}
 .trial-note b{color:var(--kinu)}
 .trial-note a{color:var(--kinu);text-underline-offset:3px}
+.online-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px}
+.aids + .online-row{margin-top:calc(-1 * clamp(56px,7vw,96px) + 18px)}
+.online-row .online{margin-top:0!important}
+@media (max-width:560px){.online-row .btn{flex:1 1 100%}}
 .legal{display:grid;gap:clamp(32px,4vw,44px);max-width:760px}
 .legal .sec{gap:10px}
 .legal h2{font-size:clamp(20px,2.4vw,24px)}
@@ -799,10 +803,6 @@ html.light .hero::before{opacity:.6}
     <span class="season"><i>✓</i>Saison 2026/2027 : les cours ont repris le 14 septembre</span>
     <h1 class="hero-slogan"><span class="sr">AS Caluire Karaté, club de karaté à Caluire-et-Cuire : </span>Plus<br>qu'un<br><em>sport</em></h1>
     <p><strong>Le club créé par ses adhérents, pour ses adhérents.</strong> Du baby karaté dès 4 ans jusqu'aux hauts gradés, sur deux dojos à Caluire-et-Cuire.</p>
-    <div class="cta">
-      <a class="btn btn-hi btn-belt" href="https://www.helloasso.com/associations/as-caluire-karate/adhesions/adhesion-2026-2027" target="_blank" rel="noopener"><span>Adhérer pour 2026/2027</span><span class="bk" aria-hidden="true"><b>空</b><b>手</b><b>道</b></span></a>
-      <a class="btn btn-line" href="#planning" data-go="planning">Voir le planning</a>
-    </div>
   </div>
 
   <div class="facts">
@@ -826,7 +826,10 @@ html.light .hero::before{opacity:.6}
     <div><b>Pass'Sport <em>−50 €</em></b><span>l'aide de l'État, valable pour toute inscription</span></div>
     <div><b>Pass Région <em>−30 / −60 €</em></b><span>selon votre situation, valable pour toute inscription</span></div>
   </div>
-  <p class="online"><span aria-hidden="true">✓</span><b>100 % en ligne :</b> inscription et paiement sécurisés sur HelloAsso, 7j/7.</p>
+  <div class="online-row">
+    <p class="online"><span aria-hidden="true">✓</span><b>100 % en ligne :</b> inscription et paiement sécurisés sur HelloAsso, 7j/7.</p>
+    <a class="btn btn-hi btn-belt" href="https://www.helloasso.com/associations/as-caluire-karate/adhesions/adhesion-2026-2027" target="_blank" rel="noopener"><span>Adhérer pour 2026/2027</span><span class="bk" aria-hidden="true"><b>空</b><b>手</b><b>道</b></span></a>
+  </div>
 
   <div class="video">
     <div class="txt">
